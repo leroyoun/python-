@@ -1,0 +1,126 @@
+<mxfile host="app.diagrams.net" modified="2026-09-24T00:00:00.000Z" agent="TRAE" version="22.0.0" type="device">
+  <diagram name="闰年判断流程图" id="leap-year-flowchart">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 标题 -->
+        <mxCell id="title" value="闰年判断流程图&#10;判定准则：四年一闰，百年不闰，四百年又闰" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="180" y="10" width="490" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 开始 -->
+        <mxCell id="start" value="开始" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 输入年份 -->
+        <mxCell id="input" value="输入年份 year" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="330" y="150" width="160" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 判断1：能被400整除？ -->
+        <mxCell id="d1" value="year 能被 400 整除？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="230" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- 判断2：能被4整除？ -->
+        <mxCell id="d2" value="year 能被 4 整除？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="380" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- 判断3：能被100整除？ -->
+        <mxCell id="d3" value="year 能被 100 整除？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="530" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：是闰年（来自判断1 是） -->
+        <mxCell id="leap1" value="输出：&#10;year 是闰年" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="255" width="150" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：不是闰年（来自判断2 否） -->
+        <mxCell id="notleap1" value="输出：&#10;year 不是闰年" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="70" y="405" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：不是闰年（来自判断3 是） -->
+        <mxCell id="notleap2" value="输出：&#10;year 不是闰年" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="70" y="555" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：是闰年（来自判断3 否） -->
+        <mxCell id="leap2" value="输出：&#10;year 是闰年" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="555" width="150" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 结束 -->
+        <mxCell id="end" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="360" y="690" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：开始 → 输入 -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;" edge="1" parent="1" source="start" target="input">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：输入 → 判断1 -->
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;" edge="1" parent="1" source="input" target="d1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：判断1 → 是闰年（右，是） -->
+        <mxCell id="e3" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d1" target="leap1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：判断1 → 判断2（下，否） -->
+        <mxCell id="e4" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d1" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：判断2 → 不是闰年（左，否） -->
+        <mxCell id="e5" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d2" target="notleap1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：判断2 → 判断3（下，是） -->
+        <mxCell id="e6" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d2" target="d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：判断3 → 不是闰年（左，是） -->
+        <mxCell id="e7" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d3" target="notleap2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：判断3 → 是闰年（右，否） -->
+        <mxCell id="e8" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d3" target="leap2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：是闰年1 → 结束 -->
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.8;entryY=0;endArrow=classic;" edge="1" parent="1" source="leap1" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：不是闰年1 → 结束 -->
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.2;entryY=0;endArrow=classic;" edge="1" parent="1" source="notleap1" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：不是闰年2 → 结束 -->
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.35;entryY=0;endArrow=classic;" edge="1" parent="1" source="notleap2" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：是闰年2 → 结束 -->
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.65;entryY=0;endArrow=classic;" edge="1" parent="1" source="leap2" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

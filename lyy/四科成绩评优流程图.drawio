@@ -1,0 +1,226 @@
+<mxfile host="app.diagrams.net" modified="2026-09-24T00:00:00.000Z" agent="TRAE" version="22.0.0" type="device">
+  <diagram name="四科成绩评优流程图" id="score-evaluation">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 标题 -->
+        <mxCell id="title" value="四科成绩评优 — 修复后算法流程图&#10;评优规则：总分 ≥ 380 且 每科 ≥ 95 → 学优生" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="180" y="10" width="540" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 开始 -->
+        <mxCell id="start" value="开始" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 输入四科成绩 -->
+        <mxCell id="input" value="输入四科成绩（字符串）&#10;language, math, english, science&#10;= input().split(' ')" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="340" y="150" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- 类型转换 -->
+        <mxCell id="convert" value="将字符串转换为整数：&#10;language = int(language)&#10;math = int(math)&#10;english = int(english)&#10;science = int(science)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="235" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 计算总分 -->
+        <mxCell id="calc" value="计算总分：&#10;total = language + math + english + science" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="340" y="345" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 判断1：总分 >= 380 -->
+        <mxCell id="d1" value="total &gt;= 380 ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="360" y="425" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：不是学优生（来自判断1 否） -->
+        <mxCell id="fail1" value="输出：&#10;该生不是学优生" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="445" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 判断2：语文 >= 95 -->
+        <mxCell id="d2" value="language &gt;= 95 ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="360" y="535" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：不是学优生（来自判断2 否） -->
+        <mxCell id="fail2" value="输出：&#10;该生不是学优生" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="555" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 判断3：数学 >= 95 -->
+        <mxCell id="d3" value="math &gt;= 95 ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="360" y="645" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：不是学优生（来自判断3 否） -->
+        <mxCell id="fail3" value="输出：&#10;该生不是学优生" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="665" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 判断4：英语 >= 95 -->
+        <mxCell id="d4" value="english &gt;= 95 ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="360" y="755" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：不是学优生（来自判断4 否） -->
+        <mxCell id="fail4" value="输出：&#10;该生不是学优生" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="775" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 判断5：科学 >= 95 -->
+        <mxCell id="d5" value="science &gt;= 95 ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="600" y="755" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：是学优生（来自判断5 是） -->
+        <mxCell id="pass" value="输出：&#10;该生是学优生" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="775" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 输出：不是学优生（来自判断5 否） -->
+        <mxCell id="fail5" value="输出：&#10;该生不是学优生" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="870" width="170" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 结束 -->
+        <mxCell id="end" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="940" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 连线 ==================== -->
+
+        <!-- 开始 → 输入 -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;" edge="1" parent="1" source="start" target="input">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 输入 → 类型转换 -->
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;" edge="1" parent="1" source="input" target="convert">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 类型转换 → 计算总分 -->
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;" edge="1" parent="1" source="convert" target="calc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 计算总分 → 判断1 -->
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;" edge="1" parent="1" source="calc" target="d1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断1 → 否 → 不是学优生 -->
+        <mxCell id="e5" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d1" target="fail1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断1 → 是 → 判断2 -->
+        <mxCell id="e6" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d1" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断2 → 否 → 不是学优生 -->
+        <mxCell id="e7" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d2" target="fail2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断2 → 是 → 判断3 -->
+        <mxCell id="e8" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d2" target="d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断3 → 否 → 不是学优生 -->
+        <mxCell id="e9" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d3" target="fail3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断3 → 是 → 判断4 -->
+        <mxCell id="e10" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d3" target="d4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断4 → 否 → 不是学优生 -->
+        <mxCell id="e11" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d4" target="fail4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断4 → 是 → 判断5 -->
+        <mxCell id="e12" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d4" target="d5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断5 → 是 → 学优生 -->
+        <mxCell id="e13" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d5" target="pass">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 判断5 → 否 → 不是学优生 -->
+        <mxCell id="e14" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d5" target="fail5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 不是学优生1 → 结束 -->
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;endArrow=classic;" edge="1" parent="1" source="fail1" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="467" />
+              <mxPoint x="30" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 不是学优生2 → 结束 -->
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0.2;entryY=0;endArrow=classic;" edge="1" parent="1" source="fail2" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="577" />
+              <mxPoint x="260" y="930" />
+              <mxPoint x="414" y="930" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 不是学优生3 → 结束 -->
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0.35;entryY=0;endArrow=classic;" edge="1" parent="1" source="fail3" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="687" />
+              <mxPoint x="260" y="925" />
+              <mxPoint x="432" y="925" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 不是学优生4 → 结束 -->
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;endArrow=classic;" edge="1" parent="1" source="fail4" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="797" />
+              <mxPoint x="260" y="920" />
+              <mxPoint x="450" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 是学优生 → 结束 -->
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=1;entryY=0.5;endArrow=classic;" edge="1" parent="1" source="pass" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="797" />
+              <mxPoint x="1020" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 不是学优生5 → 结束 -->
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.65;entryY=0;endArrow=classic;" edge="1" parent="1" source="fail5" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
